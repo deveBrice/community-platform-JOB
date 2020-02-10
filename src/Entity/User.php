@@ -44,7 +44,6 @@ class User implements UserInterface
 
     public function __construct()
     {
-        $this->articles = new ArrayCollection();
         $this->roles = array('ROLE_USER');
     }
 
@@ -120,7 +119,8 @@ class User implements UserInterface
         return $this->email;
     }
 
-    public function eraseCredentials() 
+    // TODO: Implement eraseCredentials() method.
+    public function eraseCredentials()
     {
 
     }
