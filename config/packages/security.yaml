@@ -1,5 +1,7 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    encoders:
+        App\Entity\User: bcrypt
     providers:
         in_memory: { memory: ~ }
         our_db_provider:
@@ -14,14 +16,13 @@ security:
             anonymous: ~
             provider: our_db_provider
             form_login:
-                login_path: login
-                check_path: login
+                login_path: log_in
+                check_path: log_in
                 username_parameter: "login[email]"
                 password_parameter: "login[password]"
             logout:
-                path: /signout
+                path: /logout
                 target: /login
-            access_denied_url: /login
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
