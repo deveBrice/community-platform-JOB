@@ -9,8 +9,9 @@ imports:
   - { resource: admin/ }
 
 easy_admin:
+  site_name: 'JOB'
   user:
-    name_property_path: 'first_name'
+    name_property_path: 'full_name'
 
 
 
