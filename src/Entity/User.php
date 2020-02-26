@@ -30,6 +30,11 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $fullname;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $email;
 
     /**  
@@ -74,6 +79,11 @@ class User implements UserInterface
         $this->lastname = $lastname;
 
         return $this;
+    }
+
+    public function getFullname(): ?string
+    {
+        return $this->firstname.' '.$this->lastname;
     }
 
     public function getEmail(): ?string

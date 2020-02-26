@@ -1,0 +1,17 @@
+#easy_admin:
+#    entities:
+#        # List the entity class name you want to manage
+#        - App\Entity\Product
+#        - App\Entity\Category
+#        - App\Entity\User
+
+imports:
+  - { resource: admin/ }
+
+easy_admin:
+  site_name: 'JOB'
+  user:
+    name_property_path: 'full_name'
+
+
+
