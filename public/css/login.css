@@ -1,0 +1,57 @@
+#container-login {
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#login-form {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* only used for background overlay not needed for centering */
+form:before {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    content: '';
+    height: 200%;
+    left: 0;
+    position: absolute;
+    top: -167;
+    width: 100%;
+    background-color: #e9ecef;
+    z-index: -1;
+}
+
+#login_submit{
+    border-radius: 0px;
+} 
+
+#login_email {
+    border-radius: 0px;
+    height: 43px;
+}
+
+#login_password {
+    border-radius: 0px;
+    height: 43px;
+}
+
+#login_submit {
+    width: 255px;
+}
+
+label.required {
+    display: none;
+}
+
+#user_icon img{
+    height: 100px;
+}
+
+.header-title h2 {
+   margin-bottom: 10px;
+}
