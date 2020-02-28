@@ -19,15 +19,15 @@ class Content
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private $Title;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $description;
+    private $descritption;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="content", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="content", cascade={"persist", "remove"})
      */
     private $author;
 
@@ -38,24 +38,24 @@ class Content
 
     public function getTitle(): ?string
     {
-        return $this->title;
+        return $this->Title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(string $Title): self
     {
-        $this->title = $title;
+        $this->Title = $Title;
 
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getDescritption(): ?string
     {
-        return $this->description;
+        return $this->descritption;
     }
 
-    public function setDescription(string $description): self
+    public function setDescritption(string $descritption): self
     {
-        $this->description = $description;
+        $this->descritption = $descritption;
 
         return $this;
     }
