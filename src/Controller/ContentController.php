@@ -3,12 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Content;
+use App\Entity\User;
 use App\Form\ContentType;
 use App\Repository\ContentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @Route("/content")
@@ -18,10 +20,13 @@ class ContentController extends AbstractController
     /**
      * @Route("/", name="content_index", methods={"GET"})
      */
-    public function index(ContentRepository $contentRepository): Response
+    public function index(ContentRepository $contentRepository, UserInterface $user): Response
     {
+
+       $usercurrent =$this->getUser()->getId();
         return $this->render('content/index.html.twig', [
-            'contents' => $contentRepository->findAll(),
+            'contents' => $contentRepository->findBy(array('author'=> $usercurrent)),
+
         ]);
     }
 
@@ -31,6 +36,7 @@ class ContentController extends AbstractController
     public function new(Request $request): Response
     {
         $content = new Content();
+        $content->setAuthor($this->getUser());
         $form = $this->createForm(ContentType::class, $content);
         $form->handleRequest($request);
 
