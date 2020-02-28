@@ -1,12 +1,38 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Content index{% endblock %}
-
+{% block stylesheets %}
+ {{ parent() }}
+   <link rel="stylesheet" href="{{ asset('css/content_index.css') }}" type="text/css" />
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+{% endblock %}
 {% block body %}
-    <h1>Content index</h1>
-
-    <table class="table">
-        <thead>
+<div class="container-fluid pl-0">
+<div class="row">
+  <div class="col-md-12">
+     <div class="row">
+       <div class="col-md-2">
+         <div class="side-board">
+           <div class="side-board-header">
+             <p>CONTENT MANAGER</p>
+           </div>
+           <div class="create-content">
+            <ul>
+              <li>
+                <a href="{{ path('content_new') }}"><p>Create content</p></a>
+              </li>
+            </ul>
+           </div>
+        </div>
+      </div>
+       <div class="col-md-8">
+          <table class="table">
+          <div class="alert alert-danger error-message" role="alert">
+              
+           </div>
+          <div class="linear-gradient">
+            <p>List of content</p>
+          </div>
+        <thead class="thead-dark">
             <tr>
                 <th>Id</th>
                 <th>Title</th>
@@ -33,5 +59,22 @@
         </tbody>
     </table>
 
-    <a href="{{ path('content_new') }}">Create new</a>
+    
+       </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+    
+       
+
+    
 {% endblock %}
