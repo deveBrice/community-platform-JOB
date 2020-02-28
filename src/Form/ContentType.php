@@ -14,7 +14,7 @@ class ContentType extends AbstractType
         $builder
             ->add('Title')
             ->add('description')
-            ->add('author')
+
         ;
     }
 
