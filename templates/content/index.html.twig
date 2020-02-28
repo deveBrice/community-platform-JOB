@@ -36,7 +36,7 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Descritption</th>
+                <th>Description</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -44,8 +44,8 @@
         {% for content in contents %}
             <tr>
                 <td>{{ content.id }}</td>
-                <td>{{ content.Title }}</td>
-                <td>{{ content.descritption }}</td>
+                <td>{{ content.title }}</td>
+                <td>{{ content.description }}</td>
                 <td>
                     <a href="{{ path('content_show', {'id': content.id}) }}">show</a>
                     <a href="{{ path('content_edit', {'id': content.id}) }}">edit</a>
@@ -57,7 +57,6 @@
             </tr>
         {% endfor %}
         </tbody>
-    </table>
 
     
        </div>
