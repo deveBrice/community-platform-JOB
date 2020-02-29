@@ -26,9 +26,14 @@
       </div>
        <div class="col-md-8">
           <table class="table">
-          <div class="alert alert-danger error-message" role="alert">
-              
-           </div>
+          {% if content is not defined %}
+            <div class="error-no-records">
+              <div class="alert alert-danger error-message" role="alert">
+                <p>no records found</p>
+              </div>
+            </div>
+         {% endif %}
+         
           <div class="linear-gradient">
             <p>List of content</p>
           </div>
@@ -52,9 +57,9 @@
                 </td>
             </tr>
         {% else %}
-            <tr>
+            <!--<tr>
                 <td colspan="4">no records found</td>
-            </tr>
+            </tr>-->
         {% endfor %}
         </tbody>
 

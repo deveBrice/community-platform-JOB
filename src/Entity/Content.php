@@ -31,6 +31,7 @@ class Content
      */
     private $author;
 
+
     public function getId(): ?int
     {
         return $this->id;

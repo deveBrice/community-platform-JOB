@@ -47,7 +47,7 @@ class ContentController extends AbstractController
 
             return $this->redirectToRoute('content_index');
         }
-
+          var_dump($content);
         return $this->render('content/new.html.twig', [
             'content' => $content,
             'form' => $form->createView(),

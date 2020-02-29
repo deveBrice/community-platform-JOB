@@ -42,9 +42,8 @@
 
 .side-board {
     height: 701px;
-    background: linear-gradient(180deg,#fb404b 0,#bb0502 100%)
+    background-color: #343a40;
 }
-
 .create-content {
   display: flex;
   justify-content: center;
@@ -73,4 +72,17 @@
 .create-content a {
   text-decoration: none;
   color: white;
+}
+
+.sf-toolbar-clearer {
+  display: none !important;
+}
+
+.error-no-records {
+  margin-top: 20px;
+}
+
+.error-message {
+  height: 50px;
+  border-radius: 0px;
 }

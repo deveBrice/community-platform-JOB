@@ -32,7 +32,7 @@ class AppFixtures extends Fixture
 
             $content = new Content();
             $content->setTitle($this->faker->sentence);
-            $content->setDescritption($this->faker->text);
+            $content->setDescription($this->faker->text);
             $content->setAuthor($user);
             $content->setState('REVIEW_ASKED');
             $manager->persist($content);
