@@ -37,6 +37,7 @@ class ContentController extends AbstractController
     {
         $content = new Content();
         $content->setAuthor($this->getUser());
+        $content->setState('REVIEW_REQUESTED');
         $form = $this->createForm(ContentType::class, $content);
         $form->handleRequest($request);
 
