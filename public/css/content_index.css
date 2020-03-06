@@ -13,9 +13,10 @@
 }
 
 
-.linear-gradient h3 {
+.linear-gradient h4 {
   color: white;
   margin: 0px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .container-content {
@@ -37,12 +38,17 @@
 .side-board-header p {
   margin: 0px;
   color: white;
-  font-family: 'Montserrat';
+  font-family: 'Raleway', sans-serif;
 }
 
 .side-board {
-    height: 701px;
+    height: 685px;
+   /* position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;*/
     background-color: #343a40;
+
 }
 .create-content {
   display: flex;
@@ -64,7 +70,7 @@
   align-items: center;
   width: 200px;
   height: 50px;
-  font-family: 'Montserrat';
+  font-family: 'Raleway', sans-serif;
   background: rgba(255, 255, 255, 0.23);
   border-radius: 4px;
 }

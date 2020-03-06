@@ -3,7 +3,7 @@
 {% block stylesheets %}
  {{ parent() }}
    <link rel="stylesheet" href="{{ asset('css/content_index.css') }}" type="text/css" />
-   <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet">
 {% endblock %}
 {% block body %}
 <div class="container-fluid pl-0">
@@ -25,7 +25,7 @@
         </div>
       </div>
        <div class="col-md-8">
-          <table class="table">
+          <table class="table table-striped">
           {% if content is not defined %}
             <div class="error-no-records">
               <div class="alert alert-danger error-message" role="alert">
@@ -35,7 +35,7 @@
          {% endif %}
          
           <div class="linear-gradient">
-            <p>List of content</p>
+            <h4>List of content</h4>
           </div>
         <thead class="thead-dark">
             <tr>
