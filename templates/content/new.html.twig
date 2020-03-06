@@ -2,10 +2,14 @@
 
 {% block title %}New Content{% endblock %}
 
+{% block stylesheets %}
+  {{ parent() }}
+   <link rel="stylesheet" href="{{ asset('css/new-content.css') }}" type="text/css" />
+{% endblock %}
+
 {% block body %}
-    <h1>Create new Content</h1>
 
     {{ include('content/_form.html.twig') }}
 
-    <a href="{{ path('content_index') }}">back to list</a>
+
 {% endblock %}

@@ -1,4 +1,25 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet">
+<section id="container-new-content">
+  <div id="new-content-form">
+    <div id="pencil_icon">
+       <img src="{{ asset('img/pencil-icon.png') }}" title="my image" alt="My image">
+    </div>
+    <div class="new-content-title">
+      <h2>Create new content</h2>
+    </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6 mx-auto">
+                    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}} ) }}
+                        <div class="form-group"> {{ form_row(form.title, {'attr': {'class': 'form-control', 'placeholder': 'Enter a title'}}) }}</div>
+                        <div class="form-group">{{ form_row(form.description, {'attr': {'class': 'form-control', 'placeholder': 'Enter a description'}}) }}</div>
+                        <div class="form-group">{{ form_row(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}</div>
+                    {{ form_end(form) }}
+                    <a href="{{ path('content_index') }}">Back to list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</section>
