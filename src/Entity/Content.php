@@ -31,6 +31,12 @@ class Content
      */
     private $author;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $state;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +74,18 @@ class Content
     public function setAuthor(?User $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getState(): ?string
+    {
+        return $this->state;
+    }
+
+    public function setState(string $state) : self
+    {
+        $this->state = $state;
 
         return $this;
     }
