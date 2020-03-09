@@ -1,4 +1,5 @@
 ![PHP Composer](https://github.com/deveBrice/community-platform-JOB/workflows/PHP%20Composer/badge.svg)
+[![Build Status](https://travis-ci.com/deveBrice/community-platform-JOB.svg?branch=develop)](https://travis-ci.com/deveBrice/community-platform-JOB)
 # Initialization
 
 1) Launch containers with  ``` docker-compose up -d ```
