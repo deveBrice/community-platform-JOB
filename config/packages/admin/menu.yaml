@@ -1,0 +1,7 @@
+easy_admin:
+  design:
+    menu:
+      - label: 'Administration'
+      - { entity: 'User', icon: 'user', label: 'Users' }
+      - { entity: 'Content', icon: 'book', label: 'Content' }
+      - { entity: 'Comment', icon: 'comment', label: 'Comment' }
