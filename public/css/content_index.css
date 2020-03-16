@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
 }
+
 .linear-gradient {
     display: flex;
     justify-content: center;
@@ -15,7 +16,6 @@
     height: 50px;
     margin-top: 25px;    
 }
-
 
 .linear-gradient h4 {
   color: white;
@@ -30,64 +30,6 @@
 .new_content a {
   text-decoration: none;
 }
-
-
-/*.side-board-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.side-board-header p {
-  margin: 0px;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-}
-
-.dropdown-menu.show {
-  display:block;
-  position: relative;
-  z-index: 1031;
-}
-
-.side-board {
-    height: 100vh;
-    position: fixed;
-    top: 56px;
-    left: 0;
-    bottom: 0;
-    z-index: 1030;
-    background-color: #343a40;
-}*/
-
-
-
-/*.create-content ul {
-  padding: 0px;
-}
-
-.create-content li {
-  list-style: none;
-  margin-top: 30px;
-}
-
-.create-content p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 50px;
-  font-family: 'Raleway', sans-serif;
-  background: rgba(255, 255, 255, 0.23);
-  border-radius: 4px;
-}
-
-.create-content a {
-  text-decoration: none;
-  color: white;
-}*/
 
 .sf-toolbar-clearer {
   display: none !important;
@@ -140,7 +82,6 @@ a.edit {
 .create-content input:focus {
   outline: none;
 }
-
 
 .table-fixed th {
   position: sticky;
