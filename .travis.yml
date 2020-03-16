@@ -14,7 +14,7 @@ matrix:
       - IS_LATEST=1
 
 before_script:
-  - docker build --rm --tag herloct/php-cs-fixer:$PHP_CS_FIXER_VERSION-$TRAVIS_BRANCH .
+  - docker build --rm --tag herloct/php-cs-fixer:$PHP_CS_FIXER_VERSION-"$TRAVIS_BRANCH" .
   - docker run --rm herloct/php-cs-fixer:$PHP_CS_FIXER_VERSION-$TRAVIS_BRANCH
 
 script:
