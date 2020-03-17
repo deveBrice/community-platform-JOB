@@ -1,0 +1,6 @@
+easy_admin:
+  entities:
+    Comment:
+      class: App\Entity\Comment
+      list:
+        actions: ['-edit']
