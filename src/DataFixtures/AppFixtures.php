@@ -38,6 +38,27 @@ class AppFixtures extends Fixture
             $content->setState('REVIEW_ASKED');
             $manager->persist($content);
 
+            $content = new Content();
+            $content->setTitle($this->faker->sentence);
+            $content->setDescription($this->faker->text);
+            $content->setAuthor($user);
+            $content->setState('APPROVED');
+            $manager->persist($content);
+
+            $content = new Content();
+            $content->setTitle($this->faker->sentence);
+            $content->setDescription($this->faker->text);
+            $content->setAuthor($user);
+            $content->setState('REJECTED');
+            $manager->persist($content);
+
+            $content = new Content();
+            $content->setTitle($this->faker->sentence);
+            $content->setDescription($this->faker->text);
+            $content->setAuthor($user);
+            $content->setState('PUBLISHED');
+            $manager->persist($content);
+
             $comment = new Comment();
             $comment->setIdContent($content);
             $comment->setIdUser($user);
