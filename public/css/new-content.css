@@ -33,12 +33,10 @@ form:before {
     z-index: -1;
 }
 
-
 #new-content-title {
     border-radius: 0px;
     height: 43px;
 }
-
 
 #content_description {
     border-radius: 0px;
@@ -48,6 +46,8 @@ form:before {
 #content_submit {
     width: 273px;
     border-radius: 0px;
+    background: linear-gradient(to right, #43bbf2, #3144a3);
+    font-family: 'Raleway', sans-serif;
 }
 
 label.required {
@@ -63,6 +63,3 @@ label.required {
    font-family: 'Raleway', sans-serif;
 }
 
-.btn-primary {
-    background: linear-gradient(to right, #43bbf2, #3144a3);
-}
