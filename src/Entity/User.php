@@ -130,10 +130,14 @@ class User implements UserInterface
         return $this->email;
     }
 
-
     // TODO: Implement eraseCredentials() method.
     public function eraseCredentials()
     {
 
+    }
+
+    public function __toString()
+    {
+        return $this->getFullname();
     }
 }

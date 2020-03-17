@@ -12,3 +12,4 @@ easy_admin:
         children:
           - { entity: 'ContentToReview', label: 'To Review', default: true }
           - { entity: 'ContentToPublish', label: 'Approved', default: true }
+
