@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Comment;
 use App\Entity\Content;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -32,19 +33,62 @@ class AppFixtures extends Fixture
 
             $content = new Content();
             $content->setTitle($this->faker->sentence);
-            $content->setDescritption($this->faker->text);
+            $content->setDescription($this->faker->text);
             $content->setAuthor($user);
             $content->setState('REVIEW_ASKED');
             $manager->persist($content);
+
+            $content = new Content();
+            $content->setTitle($this->faker->sentence);
+            $content->setDescription($this->faker->text);
+            $content->setAuthor($user);
+            $content->setState('APPROVED');
+            $manager->persist($content);
+
+            $content = new Content();
+            $content->setTitle($this->faker->sentence);
+            $content->setDescription($this->faker->text);
+            $content->setAuthor($user);
+            $content->setState('REJECTED');
+            $manager->persist($content);
+
+            $content = new Content();
+            $content->setTitle($this->faker->sentence);
+            $content->setDescription($this->faker->text);
+            $content->setAuthor($user);
+            $content->setState('PUBLISHED');
+            $manager->persist($content);
+
+            $comment = new Comment();
+            $comment->setIdContent($content);
+            $comment->setIdUser($user);
+            $comment->setContent('This is my own comment !');
+            $manager->persist($comment);
         }
 
         $admin = new User();
         $admin->setFirstname($this->faker->firstName);
         $admin->setLastname($this->faker->lastName);
         $admin->setEmail('admin@admin.fr');
-        $admin->setRoles(array('ROLE_USER', 'ROLE_ADMIN'));
+        $admin->setRoles(array('ROLE_ADMIN'));
         $admin->setPassword($this->encoder->encodePassword($admin, 'admin'));
         $manager->persist($admin);
+
+        $reviewer = new User();
+        $reviewer->setFirstname($this->faker->firstName);
+        $reviewer->setLastname($this->faker->lastName);
+        $reviewer->setEmail('rev@rev.fr');
+        $reviewer->setRoles(array('ROLE_REVIEWER'));
+        $reviewer->setPassword($this->encoder->encodePassword($reviewer, 'rev'));
+        $manager->persist($reviewer);
+
+        $publisher = new User();
+        $publisher->setFirstname($this->faker->firstName);
+        $publisher->setLastname($this->faker->lastName);
+        $publisher->setEmail('pub@pub.fr');
+        $publisher->setRoles(array('ROLE_PUBLISHER'));
+        $publisher->setPassword($this->encoder->encodePassword($publisher, 'pub'));
+        $manager->persist($publisher);
 
         $manager->flush();
     }

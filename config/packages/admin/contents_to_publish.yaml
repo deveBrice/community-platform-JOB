@@ -1,0 +1,6 @@
+easy_admin:
+  entities:
+    ContentToPublish:
+      class: App\Entity\Content
+      list:
+        dql_filter: "entity.state = 'APPROVED'"
