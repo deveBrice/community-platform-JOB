@@ -4,9 +4,9 @@
     </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-       <ul>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="*" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+                <a class="nav-item nav-link dropdown-toggle" href="*" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Content
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -14,8 +14,18 @@
                     <a class="dropdown-item" href="{{ path('content_new') }}">New</a>
 
                 </div>
-            </li>
-        </ul>
+
+           {% if is_granted('ROLE_REVIEWER') %}
+
+                   <a class="nav-item nav-link" href="{{ path('content_reviwer') }}">Content reviewerlist</a>
+
+           {% endif %}
+           {% if is_granted('ROLE_COMMUNICANT') %}
+
+                   <a class="nav-item nav-link" href="{{ path('content_index') }}">Content publish list</a>
+
+           {% endif %}
+
       <a class="nav-item nav-link {% if current_menu is defined and current_menu == 'home' %}active{%endif%}" href="{{ path('home') }}">Home</a>
       <a class="nav-item nav-link {% if current_menu is defined and current_menu == 'login' %}active{%endif%}" href="{{ path('log_in') }}">Login</a>
       <a class="nav-item nav-link" {% if is_granted('IS_AUTHENTICATED_FULLY') %}null;{% else %}hidden{%endif%} href="{{ path('log_out') }}">Logout</a>

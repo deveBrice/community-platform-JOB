@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block title %}Content index{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/content_index.css') }}" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="container-fluid pl-0">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="side-board">
+                        <div class="side-board-header">
+                            <p>CONTENT REVIWER MANAGER</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <table class="table table-striped">
+
+                        <div class="linear-gradient">
+                            <h4>List of content reviwer</h4>
+                        </div>
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for content in contents %}
+                            <tr>
+                                <td>{{ content.id }}</td>
+                                <td>{{ content.title }}</td>
+                                <td>{{ content.description }}</td>
+                                <td>
+                                    <a href="{{ path('content_show', {'id': content.id}) }}">Show</a>
+                                    <a href="{{ path('content_edit', {'id': content.id}) }}">Edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <!--<tr>
+                                <td colspan="4">no records found</td>
+                            </tr>-->
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

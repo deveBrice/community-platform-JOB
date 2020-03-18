@@ -23,16 +23,16 @@ class ContentController extends AbstractController
     public function index(ContentRepository $contentRepository, UserInterface $user): Response
     {
 
-       $usercurrent =$this->getUser()->getId();
+        $usercurrent = $this->getUser()->getId();
         return $this->render('content/index.html.twig', [
-            'contents' => $contentRepository->findBy(array('author'=> $usercurrent)),
+            'contents' => $contentRepository->findBy(array('author' => $usercurrent)),
         ]);
     }
 
     /**
      * @Route("/new", name="content_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, UserInterface $user): Response
     {
         $content = new Content();
         $content->setAuthor($this->getUser());
@@ -88,7 +88,7 @@ class ContentController extends AbstractController
      */
     public function delete(Request $request, Content $content): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$content->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $content->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($content);
             $entityManager->flush();
@@ -96,4 +96,28 @@ class ContentController extends AbstractController
 
         return $this->redirectToRoute('content_index');
     }
+
+    /**
+     * @param ContentRepository $contentRepository
+     * @return Response
+     * @Route("/reviwer", name="content_reviwer", methods={"GET"})
+     */
+    public function reviwer(ContentRepository $contentRepository) :Response
+    {
+        return $this->render('reviwer/reviewer.html.twig', [
+           'reviwers' => $contentRepository->findAll()
+        ]);
+    }
+
+    /**
+     * @Route("/publish", name="content_publish", methods={"GET"}
+     */
+    public function communicant(ContentRepository $contentRepository) :Response
+    {
+        return $this->render('communicant/communicant.html.twig',
+            [
+                'publish' => $contentRepository->findBy('state')
+            ]);
+    }
+
 }

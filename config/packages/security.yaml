@@ -2,6 +2,10 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     encoders:
         App\Entity\User: bcrypt
+    role_hierarchy:
+        ROLE_REVIWER: ROLE_USER
+        ROLE_COMMUNICANT: ROLE_REVIWER
+        ROLE_ADMIN: ROLE_COMMUNICANT
     providers:
         in_memory: { memory: ~ }
         our_db_provider:
@@ -35,4 +39,6 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/home, roles: ROLE_USER }
+        - { path: ^/rewiver, roles: ROLE_REWIVER }
+        - { path: ^/communicant, roles: ROLE_COMMUNICANT }
         - { path: ^/admin, role: ROLE_ADMIN }

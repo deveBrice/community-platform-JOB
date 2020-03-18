@@ -36,6 +36,8 @@ class Content
      */
     private $state;
 
+    
+
 
     public function getId(): ?int
     {
@@ -89,4 +91,6 @@ class Content
 
         return $this;
     }
+
+    
 }
