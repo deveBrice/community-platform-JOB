@@ -1,5 +1,8 @@
+.container-fluid {
+    background-color: #e9ecef;
+  }
+  
 .body-container {
-   
     margin-top: 25px;
     width: 100%;
 }
