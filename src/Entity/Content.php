@@ -92,5 +92,5 @@ class Content
         return $this;
     }
 
-    
+
 }

@@ -1,7 +1,12 @@
+.container-fluid {
+  background-color: #e9ecef;
+}
+
 .error-message {
   display: flex;
   justify-content: center;
 }
+
 .linear-gradient {
     display: flex;
     justify-content: center;
@@ -9,9 +14,8 @@
     background: linear-gradient(to right, #43bbf2, #3144a3);
     width: 100%;
     height: 50px;
-    margin-top: 30px;    
+    margin-top: 25px;    
 }
-
 
 .linear-gradient h4 {
   color: white;
@@ -27,59 +31,6 @@
   text-decoration: none;
 }
 
-.side-board-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.side-board-header p {
-  margin: 0px;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-}
-
-.side-board {
-    height: 685px;
-   /* position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;*/
-    background-color: #343a40;
-
-}
-.create-content {
-  display: flex;
-  justify-content: center;
-}
-
-.create-content ul {
-  padding: 0px;
-}
-
-.create-content li {
-  list-style: none;
-  margin-top: 30px;
-}
-
-.create-content p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 50px;
-  font-family: 'Raleway', sans-serif;
-  background: rgba(255, 255, 255, 0.23);
-  border-radius: 4px;
-}
-
-.create-content a {
-  text-decoration: none;
-  color: white;
-}
-
 .sf-toolbar-clearer {
   display: none !important;
 }
@@ -91,4 +42,53 @@
 .error-message {
   height: 50px;
   border-radius: 0px;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.table-fixed  {
+  overflow-y: auto;
+  height: 463px;
+}
+
+.table-fixed  table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+a.show {
+  text-decoration: none;
+}
+
+a.edit {
+  text-decoration: none;
+}
+
+.create-content {
+  margin-bottom: 15px;
+}
+
+.create-content .create-content-button {
+  background: linear-gradient(to right, #43bbf2, #3144a3);
+  color: white;
+  border-radius: 0px;
+}
+
+.create-content input:focus {
+  outline: none;
+}
+
+.table-fixed th {
+  position: sticky;
+  top: 0;
+  background: #eee;
+}
+
+.table-fixed td {
+  text-align: center;
 }
