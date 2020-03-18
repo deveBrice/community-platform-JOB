@@ -10,3 +10,13 @@
 .container-fluid {
   overflow: hidden;
 }
+
+a.nav-item.nav-link {
+  color: white !important;
+  font-family: 'Raleway', sans-serif;
+}
+
+a.nav-link.dropdown-toggle {
+  color: white !important;
+  font-family: 'Raleway', sans-serif;
+}
