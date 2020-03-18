@@ -110,7 +110,7 @@ class ContentController extends AbstractController
     }
 
     /**
-     * @Route("/publish", name="content_publish", methods={"GET"}
+     * @Route("/publish", name="content_publish", methods={"GET"})
      */
     public function communicant(ContentRepository $contentRepository) :Response
     {
