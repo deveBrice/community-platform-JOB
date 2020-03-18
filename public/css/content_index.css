@@ -61,6 +61,10 @@
   width: 100%;
 }
 
+.table th {
+  background: linear-gradient(to right, #343A40, #15181C) !important;
+}
+
 a.show {
   text-decoration: none;
 }
