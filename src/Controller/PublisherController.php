@@ -20,7 +20,6 @@ class PublisherController extends AbstractController
      */
     public function index(ContentRepository $contentRepository): Response
     {
-
         return $this->render('publisher/index.html.twig', [
             'publishers' => $contentRepository->findBy(array('state'=> 'APPROVED')),
         ]);

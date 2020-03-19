@@ -12,10 +12,10 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="body-container">
-                        {% if publishers is not defined %}
+                        {% if publishers is empty %}
                             <div class="error-no-records">
                                 <div class="alert alert-danger error-message" role="alert">
-                                    <p>no records found</p>
+                                    <p>No published content found</p>
                                 </div>
                             </div>
                         {% endif %}
