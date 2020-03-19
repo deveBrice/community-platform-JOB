@@ -22,7 +22,6 @@ class ContentController extends AbstractController
      */
     public function index(ContentRepository $contentRepository, UserInterface $user): Response
     {
-
        $usercurrent =$this->getUser()->getId();
         return $this->render('content/index.html.twig', [
             'contents' => $contentRepository->findBy(array('author'=> $usercurrent)),
@@ -78,6 +77,7 @@ class ContentController extends AbstractController
 
         return $this->render('content/edit.html.twig', [
             'content' => $content,
+            'edit_content' => $content,
             'form' => $form->createView(),
         ]);
     }

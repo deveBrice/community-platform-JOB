@@ -1,0 +1,15 @@
+#container-new-content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #e9ecef;
+    height: 685px;
+}
+
+.btn-danger {
+    background: linear-gradient(to right, #dc3545, #C5161F);
+    color: white;
+    border-radius: 0px;   
+    width: 273px;
+    font-family: 'Raleway', sans-serif;
+}

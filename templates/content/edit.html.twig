@@ -1,13 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Edit Content{% endblock %}
-
+{% block stylesheets %}
+  {{ parent() }}
+   <link rel="stylesheet" href="{{ asset('css/new-content.css') }}" type="text/css" />
+   <link rel="stylesheet" href="{{ asset('css/edit_content.css') }}" type="text/css" />
+{% endblock %}
 {% block body %}
-    <h1>Edit Content</h1>
-
     {{ include('content/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('content_index') }}">back to list</a>
-
-    {{ include('content/_delete_form.html.twig') }}
 {% endblock %}
