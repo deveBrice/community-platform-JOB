@@ -1,1 +1,28 @@
 {% extends 'base.html.twig' %}
+{% block body %}
+<div class="linear-gradient">
+    <h4>published list</h4>
+</div>
+<div class="table-fixed">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for content in published %}
+            <tr>
+                <td>{{ content.id }}</td>
+                <td>{{ content.title }}</td>
+                <td>{{ content.description }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
