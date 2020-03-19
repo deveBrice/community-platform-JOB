@@ -22,6 +22,7 @@
             <li class="nav-item active">
               <a class="nav-item nav-link {% if current_menu is defined and current_menu == 'home' %}active{%endif%}" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Content
@@ -30,7 +31,17 @@
                  <a class="dropdown-item" href="{{ path('content_index') }}">Content list</a>
                  <a class="dropdown-item" href="{{ path('content_new') }}">Content create</a>
                 </div>
-             </li>
+             </li>{% endif %}
+              {% if is_granted("ROLE_REVIEWER") %}
+              <li class="nav-item">
+                  <a class="nav-item nav-link" href="#">Reviewer list</a>
+              </li>
+              {% endif %}
+              {% if is_granted("ROLE_PUBLISHER") %}
+              <li class="nav-item">
+                  <a class="nav-item nav-link" href="#">Publisher list</a>
+              </li>
+              {% endif %}
               <li class="nav-item">
                 <a class="nav-item nav-link {% if current_menu is defined and current_menu == 'login' %}active{%endif%}" href="{{ path('log_in') }}">Login</a>
               </li>
