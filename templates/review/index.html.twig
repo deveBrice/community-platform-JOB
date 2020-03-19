@@ -12,15 +12,15 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="body-container">
-                        {% if reviews is not defined %}
+                        {% if reviews is empty %}
                             <div class="error-no-records">
                                 <div class="alert alert-danger error-message" role="alert">
                                     <p>no records found</p>
                                 </div>
                             </div>
                         {% endif %}
-                        <div class="linear-gradient">
-                            <h4>Review list</h4>
+                        <div class="linear-gradient-review">
+                            <h4>Review content list</h4>
                         </div>
                         <div class="table-fixed">
                             <table class="table table-striped">
