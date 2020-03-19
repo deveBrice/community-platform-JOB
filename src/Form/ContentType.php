@@ -20,8 +20,7 @@ class ContentType extends AbstractType
            ))
             ->add('submit', SubmitType::class, array(
                 'label' => 'New content'
-            ));
-
+           ))
         ;
     }
 

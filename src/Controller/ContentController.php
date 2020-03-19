@@ -77,6 +77,7 @@ class ContentController extends AbstractController
 
         return $this->render('content/edit.html.twig', [
             'content' => $content,
+            'edit_content' => $content,
             'form' => $form->createView(),
         ]);
     }
