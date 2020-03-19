@@ -22,7 +22,6 @@ class ContentController extends AbstractController
      */
     public function index(ContentRepository $contentRepository, UserInterface $user): Response
     {
-
        $usercurrent =$this->getUser()->getId();
         return $this->render('content/index.html.twig', [
             'contents' => $contentRepository->findBy(array('author'=> $usercurrent)),
