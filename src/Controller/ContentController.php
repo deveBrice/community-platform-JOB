@@ -95,4 +95,6 @@ class ContentController extends AbstractController
 
         return $this->redirectToRoute('content_index');
     }
+
+
 }

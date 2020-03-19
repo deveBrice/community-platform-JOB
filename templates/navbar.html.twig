@@ -34,7 +34,7 @@
              </li>{% endif %}
               {% if is_granted("ROLE_REVIEWER") %}
               <li class="nav-item">
-                  <a class="nav-item nav-link" href="#">Reviewer list</a>
+                  <a class="nav-item nav-link" href="{{ path('review_index') }}">Reviewer list</a>
               </li>
               {% endif %}
               {% if is_granted("ROLE_PUBLISHER") %}
