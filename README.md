@@ -8,6 +8,8 @@
  ``` docker-compose exec web composer install  ```
 3) Execute database migrations :
  ``` docker-compose exec web php bin/console doctrine:migrations:migrate```
+4) Copy .env.dist into .env
+ ``` cp .env.dist .env```
 
 # Basics
 ## Composer
