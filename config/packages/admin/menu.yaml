@@ -6,10 +6,3 @@ easy_admin:
       - { entity: 'Comment', permission: 'ROLE_ADMIN', icon: 'comment', label: 'Comment' }
 
 
-      - label: 'Staff'
-      - label: 'Contents'
-        icon: 'book'
-        children:
-          - { entity: 'ContentToReview', label: 'To Review', default: true }
-          - { entity: 'ContentToPublish', label: 'Approved', default: true }
-

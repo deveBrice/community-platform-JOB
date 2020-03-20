@@ -1,6 +1,0 @@
-easy_admin:
-  entities:
-    ContentToReview:
-      class: App\Entity\Content
-      list:
-        dql_filter: "entity.state = 'REVIEW_ASKED'"
