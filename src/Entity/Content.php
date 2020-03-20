@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +37,16 @@ class Content
      * @ORM\Column(type="string", length=255)
      */
     private $state;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ContentUpload", mappedBy="id_content", orphanRemoval=true)
+     */
+    private $contentUploads;
+
+    public function __construct()
+    {
+        $this->contentUploads = new ArrayCollection();
+    }
 
 
     public function getId(): ?int
@@ -93,5 +105,36 @@ class Content
     public function __toString()
     {
         return $this->title;
+    }
+
+    /**
+     * @return Collection|ContentUpload[]
+     */
+    public function getContentUploads(): Collection
+    {
+        return $this->contentUploads;
+    }
+
+    public function addContentUpload(ContentUpload $contentUpload): self
+    {
+        if (!$this->contentUploads->contains($contentUpload)) {
+            $this->contentUploads[] = $contentUpload;
+            $contentUpload->setIdContent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContentUpload(ContentUpload $contentUpload): self
+    {
+        if ($this->contentUploads->contains($contentUpload)) {
+            $this->contentUploads->removeElement($contentUpload);
+            // set the owning side to null (unless already changed)
+            if ($contentUpload->getIdContent() === $this) {
+                $contentUpload->setIdContent(null);
+            }
+        }
+
+        return $this;
     }
 }

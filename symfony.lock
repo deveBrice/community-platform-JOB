@@ -12,11 +12,47 @@
             "config/routes/easy_admin.yaml"
         ]
     },
+    "firebase/php-jwt": {
+        "version": "v5.1.0"
+    },
+    "google/apiclient": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "49c5d7a66d863d28513979bf0666dc77599100c0"
+        }
+    },
+    "google/apiclient-services": {
+        "version": "v0.127"
+    },
+    "google/auth": {
+        "version": "v1.7.1"
+    },
+    "guzzlehttp/guzzle": {
+        "version": "6.5.2"
+    },
+    "guzzlehttp/promises": {
+        "version": "v1.3.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "1.6.1"
+    },
+    "monolog/monolog": {
+        "version": "2.0.2"
+    },
     "pagerfanta/pagerfanta": {
         "version": "v2.1.3"
     },
     "php": {
         "version": "7.3"
+    },
+    "phpseclib/phpseclib": {
+        "version": "2.0.25"
+    },
+    "ralouphie/getallheaders": {
+        "version": "3.0.3"
     },
     "symfony/asset": {
         "version": "v4.3.11"
