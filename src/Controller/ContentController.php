@@ -7,6 +7,8 @@ use App\Entity\User;
 use App\Form\ContentType;
 use App\Repository\ContentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -35,11 +37,33 @@ class ContentController extends AbstractController
     {
         $content = new Content();
         $content->setAuthor($this->getUser());
-        $content->setState('REVIEW_REQUESTED');
+        $content->setState('REVIEW_ASKED');
         $form = $this->createForm(ContentType::class, $content);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var  UploadedFile $file **/
+            $file = $form->get('contentUploads')->getData();
+
+            if($file){
+                $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$file->guessExtension();
+                
+                try {
+                    $file->move(
+                        $this->getParameter('upload_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    echo $e->getMessage();
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $content->addContentUpload($newFilename);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($content);
             $entityManager->flush();

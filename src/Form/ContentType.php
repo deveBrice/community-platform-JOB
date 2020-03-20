@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Content;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -18,6 +19,11 @@ class ContentType extends AbstractType
             ->add('description', TextareaType::class, array(
                 'attr' => array('class' => 'description'),
            ))
+            ->add('contentUploads', FileType::class, [
+                'label' => 'Importer',
+                'mapped' => false,
+                'required' => false,
+            ])
             ->add('submit', SubmitType::class, array(
                 'label' => 'New content'
            ))
