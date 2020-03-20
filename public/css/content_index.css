@@ -1,0 +1,135 @@
+.container-fluid {
+  background-color: #e9ecef;
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
+}
+
+.linear-gradient {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #43bbf2, #3144a3);
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;    
+}
+
+.linear-gradient h4 {
+  color: white;
+  margin: 0px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.linear-gradient-published {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #28A745, #0F7C1F);
+  width: 100%;
+  height: 50px;
+  margin-top: 25px;    
+}
+
+.linear-gradient-review h4 {
+color: white;
+margin: 0px;
+font-family: 'Raleway', sans-serif;
+}
+
+.linear-gradient-review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #FFC107, #FF9E02);
+  width: 100%;
+  height: 50px;
+  margin-top: 25px;    
+}
+
+.linear-gradient-published h4 {
+ color: white;
+ margin: 0px;
+ font-family: 'Raleway', sans-serif;
+}
+
+.container-content {
+  margin: 60px 0px 0px 0px;
+}
+
+.new_content a {
+  text-decoration: none;
+}
+
+.sf-toolbar-clearer {
+  display: none !important;
+}
+
+.error-no-records {
+  margin-top: 20px;
+}
+
+.error-message {
+  height: 50px;
+  border-radius: 0px;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.table-fixed  {
+  overflow-y: auto;
+  height: 463px;
+  margin-bottom: 15px;
+}
+
+.table-fixed  table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th {
+  background: linear-gradient(to right, #343A40, #15181C) !important;
+}
+
+a.show {
+  text-decoration: none;
+}
+
+a.edit {
+  text-decoration: none;
+}
+
+.create-content {
+  margin-bottom: 15px;
+}
+
+.create-content .create-content-button {
+  background: linear-gradient(to right, #43bbf2, #3144a3);
+  color: white;
+  border-radius: 0px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.create-content input:focus {
+  outline: none;
+}
+
+.table-fixed th {
+  position: sticky;
+  top: 0;
+  background: #eee;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.table-fixed td {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}

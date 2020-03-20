@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Content{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+   <link rel="stylesheet" href="{{ asset('css/new-content.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    {{ include('content/_form.html.twig') }}
+{% endblock %}

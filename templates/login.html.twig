@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+{% block stylesheets %}
+  {{ parent() }}
+   <link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css" />
+{% endblock %}
+{% block body %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+        <p>You are already authenticated ! Please logout to switch account.</p>
+
+    {% else %}
+    <section id="container-login" class="min-vh-100">
+    <div id="login-form">
+    <div id="user_icon">
+    <img src="{{ asset('img/user_icon.png') }}" title="my image" alt="My image">
+    </div>
+    <div class="header-title">
+    <h2>Connexion</h2>
+    </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-3 mx-auto">
+                    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}} ) }}
+                        <div class="form-group"> {{ form_row(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}</div>
+                        <div class="form-group">{{ form_row(form.password, {'attr': {'class': 'form-control', 'placeholder': 'Password'}}) }}</div>
+                        <div class="form-group">{{ form_row(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}</div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    {% endif %}
+
+
+{% endblock %}

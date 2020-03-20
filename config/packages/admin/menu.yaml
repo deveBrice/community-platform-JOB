@@ -1,0 +1,8 @@
+easy_admin:
+  design:
+    menu:
+      - label: 'Administration'
+      - { entity: 'User', permission: 'ROLE_ADMIN' ,icon: 'user', label: 'Users' }
+      - { entity: 'Comment', permission: 'ROLE_ADMIN', icon: 'comment', label: 'Comment' }
+
+

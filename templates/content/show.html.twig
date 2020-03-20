@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Content{% endblock %}
+{% block stylesheets %}
+ {{ parent() }}
+   <link rel="stylesheet" href="{{ asset('css/show_content.css') }}" type="text/css" />
+   <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="container-fluid body-container pr-0 pl-0">
+      <div class="row">
+        <div class="col-lg-12">
+           <div class="row">
+             <div class="col-lg-8 offset-lg-2">
+                <div class="title-table">
+                   <h4>Show Content</h4>
+                </div>
+                <div class="table-fixed-content">
+                   <table class="table table-striped">
+                     <tbody>
+                       <tr>
+                         <th>Id</th>
+                            <td>{{ content.id }}</td>
+                         </tr>
+                         <tr>
+                           <th>Title</th>
+                           <td>{{ content.title }}</td>
+                         </tr>
+                         <tr>
+                           <th>Descritption</th>
+                           <td>{{ content.description }}</td>
+                        </tr>
+                     </tbody>
+                   </table>
+                </div>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-lg-1 offset-lg-2">
+               <div class="edit-content">
+                  <a href="{{ path('content_edit', {'id': content.id}) }}" class="btn btn-secondary edit-content-button">Edit</a>
+               </div>
+             </div>
+             <div class="col-lg-2">
+                {{ include('content/_delete_form.html.twig') }}
+            </div>
+          </div>
+           <div class="row">
+             <div class="col-lg-2 offset-lg-2">
+               <div class="back-to-list">
+                 <a href="{{ path('content_index') }}">Back to list</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

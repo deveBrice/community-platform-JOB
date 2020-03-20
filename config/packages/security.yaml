@@ -1,0 +1,32 @@
+security:
+    encoders:
+        App\Entity\User: auto
+    providers:
+        in_memory: { memory: ~ }
+        our_db_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: ~
+            provider: our_db_provider
+            form_login:
+                login_path: log_in
+                check_path: log_in
+                username_parameter: "login[email]"
+                password_parameter: "login[password]"
+            logout:
+                path: /logout
+                target: /login
+            access_denied_handler: App\Security\AccessDeniedHandler
+    role_hierarchy:
+        ROLE_REVIEWER:     ROLE_USER
+        ROLE_PUBLISHER:    ROLE_REVIEWER
+        ROLE_ADMIN:        ROLE_PUBLISHER
+    access_control:
+        - { path: ^/home, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_REVIEWER }

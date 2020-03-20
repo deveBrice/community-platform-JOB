@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Content{% endblock %}
+{% block stylesheets %}
+  {{ parent() }}
+   <link rel="stylesheet" href="{{ asset('css/new-content.css') }}" type="text/css" />
+   <link rel="stylesheet" href="{{ asset('css/edit_content.css') }}" type="text/css" />
+{% endblock %}
+{% block body %}
+    {{ include('content/_form.html.twig', {'button_label': 'Update'}) }}
+{% endblock %}

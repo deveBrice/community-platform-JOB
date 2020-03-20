@@ -1,0 +1,60 @@
+<div class="container-fluid pr-0 pl-0">
+   <div class="row">
+     <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="banner-community">
+            <img src="{{ asset('img/community_banner.jpg') }}" title="my image" alt="My image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="navigation">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}" type="text/css" />
+      <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+            </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-item nav-link {% if current_menu is defined and current_menu == 'home' %}active{%endif%}" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Content
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                 <a class="dropdown-item" href="{{ path('content_index') }}">Content list</a>
+                 <a class="dropdown-item" href="{{ path('content_new') }}">Content create</a>
+                </div>
+             </li>{% endif %}
+              {% if is_granted("ROLE_REVIEWER") %}
+              <li class="nav-item">
+                  <a class="nav-item nav-link" href="{{ path('review_index') }}">Reviewer list</a>
+              </li>
+              {% endif %}
+              {% if is_granted("ROLE_PUBLISHER") %}
+              <li class="nav-item">
+                  <a class="nav-item nav-link" href="{{  path('publisher_index') }}">Publisher list</a>
+              </li>
+              {% endif %}
+              {% if is_granted("ROLE_ADMIN") %}
+                  <li class="nav-item">
+                      <a class="nav-item nav-link" href="{{  path('easyadmin') }}">Admin</a>
+                  </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-item nav-link {% if current_menu is defined and current_menu == 'login' %}active{%endif%}" href="{{ path('log_in') }}">Login</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-item nav-link" {% if is_granted('IS_AUTHENTICATED_FULLY') %}null;{% else %}hidden{%endif%} href="{{ path('log_out') }}">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    

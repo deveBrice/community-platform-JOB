@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% block title %}Content index{% endblock %}
+{% block stylesheets %}
+ {{ parent() }}
+   <link rel="stylesheet" href="{{ asset('css/content_index.css') }}" type="text/css" />
+   <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet">
+{% endblock %}
+{% block body %}
+<div class="container-fluid pl-0">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">   
+          <div class="body-container">
+            {% if contents is empty %}
+                <div class="error-no-records">
+                  <div class="alert alert-danger error-message" role="alert">
+                    <p>No content found</p>
+                  </div>
+                </div>
+            {% endif %}
+            <div class="linear-gradient">
+              <h4>Contents list</h4>
+            </div>
+            <div class="table-fixed">
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                  <tr>
+                      <th>Id</th>
+                      <th>Title</th>
+                      <th>Description</th>
+                      <th>actions</th>
+                      <th>Show</th>
+                      <th>Upadate</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for content in contents %}
+                <tr>
+                    <td>{{ content.id }}</td>
+                    <td>{{ content.title }}</td>
+                    <td>{{ content.description }}</td>
+                    <td><a href="{{ path('content_show', {'id': content.id}) }}" class="show">Show</a></td>
+                    <td><a href="{{ path('content_edit', {'id': content.id}) }}" class="edit">Edit</a></td>
+                </tr>
+                {% endfor %}       
+              </tbody>
+            </table>
+          </div>
+       </div>
+     </div>
+    </div>
+     <div class="row">
+       <div class="col-lg-2 offset-lg-2">
+         <div class="create-content">     
+          <a href="{{ path('content_new') }}" class="btn btn-primary create-content-button">Create content</a> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
